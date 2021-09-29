@@ -1,4 +1,4 @@
-package com.company.solvd.taxicompany;
+package com.company.solvd.taxicompany.cars;
 
 import java.util.Objects;
 
