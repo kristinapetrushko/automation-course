@@ -1,16 +1,27 @@
+package com.company.solvd.taxicompany.transport;
+
 import java.util.Objects;
 
 public class DAEWOOLANOS extends Lehkovi {
 
-    private String econom;
-    private int number;
-    private int tarif;
+    private final String TYPE = "econom";
+    private String number;
 
-    public DAEWOOLANOS(String model) {
-        super(model);
-        this.econom = econom;
+    public DAEWOOLANOS(String model, String number, double rate) {
+        super(model, rate);
         this.number = number;
-        this.tarif = tarif;
+    }
+
+    public String getTYPE() {
+        return TYPE;
+    }
+
+    public String getNumber() {
+        return number;
+    }
+
+    public void setNumber(String number) {
+        this.number = number;
     }
 
     @Override
@@ -18,20 +29,19 @@ public class DAEWOOLANOS extends Lehkovi {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         DAEWOOLANOS that = (DAEWOOLANOS) o;
-        return number == that.number && tarif == that.tarif && Objects.equals(econom, that.econom);
+        return Objects.equals(TYPE, that.TYPE) && Objects.equals(number, that.number);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(econom, number, tarif);
+        return Objects.hash(TYPE, number);
     }
 
     @Override
     public String toString() {
         return "DAEWOOLANOS{" +
-                "econom='" + econom + '\'' +
-                ", number=" + number +
-                ", tarif=" + tarif +
+                "TYPE='" + TYPE + '\'' +
+                ", number='" + number + '\'' +
                 '}';
     }
 }

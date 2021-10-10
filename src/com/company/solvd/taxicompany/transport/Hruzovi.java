@@ -1,15 +1,15 @@
-public class Hruzovi extends Transport{
+package com.company.solvd.taxicompany.transport;
+
+public abstract class Hruzovi extends Transport {
 
     private int weight;
     private int width;
     private int height;
 
-    public Hruzovi(String model) {
-        super(model);
-        this.weight = weight;
-        this.width = width;
-        this.height = height;
+    public Hruzovi(String model, double RATE_PER_KM) {
+        super(model, RATE_PER_KM);
     }
+
 
     public int getWeight() {
         return weight;

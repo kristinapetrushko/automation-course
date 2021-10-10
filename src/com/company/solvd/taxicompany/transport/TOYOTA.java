@@ -1,16 +1,29 @@
+package com.company.solvd.taxicompany.transport;
+
 import java.util.Objects;
 
 public class TOYOTA extends Lehkovi {
 
-    private String comfort;
-    private int number;
-    private int tarif;
+    private final String TYPE = "comfort";
+    private String number;
 
-    public TOYOTA(String model) {
-        super(model);
-        this.comfort = comfort;
+
+    public TOYOTA(String model, String number, double rate ) {
+        super(model, rate);
         this.number = number;
-        this.tarif = tarif;
+
+    }
+
+    public String getTYPE() {
+        return TYPE;
+    }
+
+    public String getNumber() {
+        return number;
+    }
+
+    public void setNumber(String number) {
+        this.number = number;
     }
 
     @Override
@@ -18,20 +31,19 @@ public class TOYOTA extends Lehkovi {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         TOYOTA toyota = (TOYOTA) o;
-        return number == toyota.number && tarif == toyota.tarif && Objects.equals(comfort, toyota.comfort);
+        return number == toyota.number && Objects.equals(TYPE, toyota.TYPE);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(comfort, number, tarif);
+        return Objects.hash(TYPE, number);
     }
 
     @Override
     public String toString() {
         return "TOYOTA{" +
-                "comfort='" + comfort + '\'' +
+                "TYPE='" + TYPE + '\'' +
                 ", number=" + number +
-                ", tarif=" + tarif +
                 '}';
     }
 }

@@ -1,4 +1,8 @@
-public class Driver extends Employee {
+package com.company.solvd.taxicompany.person;
+
+import com.company.solvd.taxicompany.transport.Transport;
+
+public class Driver extends Employee implements IDriver {
 
     private Transport transport;
 
@@ -13,5 +17,17 @@ public class Driver extends Employee {
 
     public void setTransport(Transport transport) {
         this.transport = transport;
+    }
+
+    @Override
+    public void talkToTheClient() {
+
+    }
+
+    @Override
+    public String toString() {
+        return "Driver{" +
+                "transport=" + transport +
+                '}';
     }
 }

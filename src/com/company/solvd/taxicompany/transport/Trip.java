@@ -1,59 +1,80 @@
+package com.company.solvd.taxicompany.transport;
+
+import com.company.solvd.taxicompany.person.Client;
+import com.company.solvd.taxicompany.person.Driver;
+
 public class Trip {
 
-    private String from;
-    private String to;
-    private String  distance;
-    private double price;
+    private String starting;
+    private String destination;
+    private double  distanceInKm;
+    private Driver driver;
+    private Client client;
 
-    public Trip(String from, String to, String distance, double price) {
-        this.from = from;
-        this.to = to;
-        this.distance = distance;
-        this.price = price;
+    public Trip(String starting, String destination, double distanceInKm) {
+        this.starting = starting;
+        this.destination = destination;
+        this.distanceInKm = distanceInKm;
+
     }
 
-    public String getFrom() {
-        return from;
+    public Driver getDriver() {
+        return driver;
     }
 
-    public void setFrom(String from) {
-        this.from = from;
+    public void setDriver(Driver driver) {
+        this.driver = driver;
     }
 
-    public String getTo() {
-        return to;
+    public Client getClient() {
+        return client;
     }
 
-    public void setTo(String to) {
-        this.to = to;
+    public void setClient(Client client) {
+        this.client = client;
     }
 
-    public String  getDistance() {
-        return distance;
+    public String getStarting() {
+        return starting;
     }
 
-    public void setDistance(String distance) {
-        this.distance = distance;
+    public void setStarting(String starting) {
+        this.starting = starting;
     }
 
-    public double getPrice() {
-        return price;
+    public String getDestination() {
+        return destination;
     }
 
-    public void setPrice(double price) {
-        this.price = price;
+    public void setDestination(String destination) {
+        this.destination = destination;
     }
 
-    public Trip() {
+    public double getDistanceInKm() {
+        return distanceInKm;
     }
 
-    public double CalculatePrice() {
-        double result, rateperkm;
-        rateperkm = 30;
-        result = (Double.parseDouble(this.getDistance()) * rateperkm);
-        Math.floor(result);
+    public void setDistanceInKm(double distanceInKm) {
+        this.distanceInKm = distanceInKm;
+    }
+
+
+
+    public double getCalculatedPrice() {
+        double ratePerKm = driver.getTransport().getRATE_PER_KM();
+        double result = (getDistanceInKm() * ratePerKm);
         return result;
     }
 
-
+    @Override
+    public String toString() {
+        return "Trip{" +
+                "starting='" + starting + '\'' +
+                ", destination='" + destination + '\'' +
+                ", distanceInKm='" + distanceInKm + '\'' +
+                ", result price=" + getCalculatedPrice() +
+                ", driver=" + driver +
+                ", client=" + client +
+                '}';
+    }
 }

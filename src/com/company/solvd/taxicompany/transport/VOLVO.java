@@ -1,16 +1,27 @@
+package com.company.solvd.taxicompany.transport;
+
 import java.util.Objects;
 
 public class VOLVO extends Lehkovi {
 
-    private String econom;
-    private int number;
-    private int tarif;
+    private final String TYPE = "econom";
+    private String number;
 
-    public VOLVO(String model) {
-        super(model);
-        this.econom = econom;
+    public VOLVO(String model, String number, double rate) {
+        super(model, rate);
         this.number = number;
-        this.tarif = tarif;
+    }
+
+    public String getTYPE() {
+        return TYPE;
+    }
+
+    public String getNumber() {
+        return number;
+    }
+
+    public void setNumber(String number) {
+        this.number = number;
     }
 
     @Override
@@ -18,20 +29,19 @@ public class VOLVO extends Lehkovi {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         VOLVO volvo = (VOLVO) o;
-        return number == volvo.number && tarif == volvo.tarif && Objects.equals(econom, volvo.econom);
+        return Objects.equals(TYPE, volvo.TYPE) && Objects.equals(number, volvo.number);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(econom, number, tarif);
+        return Objects.hash(TYPE, number);
     }
 
     @Override
     public String toString() {
         return "VOLVO{" +
-                "econom='" + econom + '\'' +
-                ", number=" + number +
-                ", tarif=" + tarif +
+                "TYPE='" + TYPE + '\'' +
+                ", number='" + number + '\'' +
                 '}';
     }
 }

@@ -1,3 +1,5 @@
+package com.company.solvd.taxicompany.person;
+
 public abstract class Employee extends Person {
 
     private String position;
@@ -24,4 +26,6 @@ public abstract class Employee extends Person {
     public void setSalary(double salary) {
         this.salary = salary;
     }
+
+
 }

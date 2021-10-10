@@ -1,15 +1,27 @@
+package com.company.solvd.taxicompany.transport;
+
 import java.util.Objects;
 
 public class BMW extends Lehkovi {
-    private String comfort;
-    private int number;
-    private int tarif;
+    private final String TYPE = "comfort";
+    private String number;
 
-    public BMW(String model) {
-        super(model);
-        this.comfort = comfort;
+    public BMW(String model, String number, double rate) {
+        super(model, rate);
         this.number = number;
-        this.tarif = tarif;
+
+    }
+
+    public String getTYPE() {
+        return TYPE;
+    }
+
+    public String getNumber() {
+        return number;
+    }
+
+    public void setNumber(String number) {
+        this.number = number;
     }
 
     @Override
@@ -17,20 +29,19 @@ public class BMW extends Lehkovi {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         BMW bmw = (BMW) o;
-        return number == bmw.number && tarif == bmw.tarif && Objects.equals(comfort, bmw.comfort);
+        return number == bmw.number && Objects.equals(TYPE, bmw.TYPE);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(comfort, number, tarif);
+        return Objects.hash(TYPE, number);
     }
 
     @Override
     public String toString() {
         return "BMW{" +
-                "comfort='" + comfort + '\'' +
+                "TYPE='" + TYPE + '\'' +
                 ", number=" + number +
-                ", tarif=" + tarif +
                 '}';
     }
 }

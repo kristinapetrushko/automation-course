@@ -1,17 +1,20 @@
-public class Client extends Person {
+package com.company.solvd.taxicompany.person;
 
-    private int numberContact;
+public class Client extends Person implements IClient{
 
-    public Client(String name, int numberContact) {
-        super(name);
+    private String numberContact;
+
+    public Client(String name, String numberContact) {
+        super(name, numberContact);
         this.numberContact = numberContact;
     }
 
-    public int getNumberContact() {
+
+    public String getNumberContact() {
         return numberContact;
     }
 
-    public void setNumberContact(int numberContact) {
+    public void setNumberContact(String numberContact) {
         this.numberContact = numberContact;
     }
 
@@ -20,5 +23,10 @@ public class Client extends Person {
         return "Client{" +
                 "numberContact=" + numberContact +
                 '}';
+    }
+
+    @Override
+    public void numberContact() {
+
     }
 }

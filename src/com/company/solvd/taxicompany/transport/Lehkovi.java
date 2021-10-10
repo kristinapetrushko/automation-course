@@ -1,16 +1,15 @@
-public class Lehkovi extends Transport {
+package com.company.solvd.taxicompany.transport;
+
+public abstract class Lehkovi extends Transport {
 
     private String mark;
     private int year;
     private int passengers;
 
-
-    public Lehkovi(String model) {
-        super(model);
-        this.mark = mark;
-        this.year = year;
-        this.passengers = passengers;
+    public Lehkovi(String model, double RATE_PER_KM) {
+        super(model, RATE_PER_KM);
     }
+
 
     public String getMark() {
         return mark;

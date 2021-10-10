@@ -1,14 +1,22 @@
+package com.company.solvd.taxicompany.transport;
+
 import java.util.Objects;
 
 public class MERCEDESSPRINTER extends Hruzovi {
 
-    private int number;
-    private int tarif;
+    private String number;
 
-    public MERCEDESSPRINTER(String model) {
-        super(model);
+    public MERCEDESSPRINTER(String model, double RATE_PER_KM) {
+        super(model, RATE_PER_KM);
+    }
+
+
+    public String getNumber() {
+        return number;
+    }
+
+    public void setNumber(String number) {
         this.number = number;
-        this.tarif = tarif;
     }
 
     @Override
@@ -16,19 +24,18 @@ public class MERCEDESSPRINTER extends Hruzovi {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         MERCEDESSPRINTER that = (MERCEDESSPRINTER) o;
-        return number == that.number && tarif == that.tarif;
+        return Objects.equals(number, that.number);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(number, tarif);
+        return Objects.hash(number);
     }
 
     @Override
     public String toString() {
         return "MERCEDESSPRINTER{" +
-                "number=" + number +
-                ", tarif=" + tarif +
+                "number='" + number + '\'' +
                 '}';
     }
 }

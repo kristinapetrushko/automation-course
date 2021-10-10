@@ -1,9 +1,14 @@
+package com.company.solvd.taxicompany.person;
+
 public abstract class Person {
 
     private String name;
 
     public Person(String name) {
         this.name = name;
+    }
+
+    public Person(String name, String numberContact) {
     }
 
     public String getName() {
