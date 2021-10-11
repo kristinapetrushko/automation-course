@@ -2,13 +2,18 @@ package com.company.solvd.taxicompany.person;
 
 import com.company.solvd.taxicompany.transport.Transport;
 
+import java.util.Random;
+
 public class Driver extends Employee implements IDriver {
 
     private Transport transport;
+    private boolean isAvailible;
 
-    public Driver(String name, String position, double salary, Transport transport) {
-        super(name, position, salary);
+    public Driver(String name, double salary, Transport transport) {
+        super(name, salary);
         this.transport = transport;
+        Random rd = new Random();
+        this.isAvailible = rd.nextBoolean();
     }
 
     public Transport getTransport() {
@@ -19,6 +24,14 @@ public class Driver extends Employee implements IDriver {
         this.transport = transport;
     }
 
+    public boolean isAvailible() {
+        return isAvailible;
+    }
+
+    public void setAvailible(boolean availible) {
+        isAvailible = availible;
+    }
+
     @Override
     public void talkToTheClient() {
 
@@ -27,7 +40,9 @@ public class Driver extends Employee implements IDriver {
     @Override
     public String toString() {
         return "Driver{" +
-                "transport=" + transport +
+                "name=" + getName() + '\'' +
+                "transport=" + transport + '\'' +
+                ", isAvailible=" + isAvailible + '\'' +
                 '}';
     }
 }

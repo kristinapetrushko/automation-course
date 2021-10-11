@@ -9,7 +9,8 @@ public class Trip {
     private String destination;
     private double  distanceInKm;
     private Driver driver;
-    private Client client;
+
+
 
     public Trip(String starting, String destination, double distanceInKm) {
         this.starting = starting;
@@ -26,13 +27,6 @@ public class Trip {
         this.driver = driver;
     }
 
-    public Client getClient() {
-        return client;
-    }
-
-    public void setClient(Client client) {
-        this.client = client;
-    }
 
     public String getStarting() {
         return starting;
@@ -74,7 +68,8 @@ public class Trip {
                 ", distanceInKm='" + distanceInKm + '\'' +
                 ", result price=" + getCalculatedPrice() +
                 ", driver=" + driver +
-                ", client=" + client +
                 '}';
     }
+
+
 }

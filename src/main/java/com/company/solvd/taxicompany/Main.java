@@ -8,14 +8,16 @@ import com.company.solvd.taxicompany.transport.Trip;
 public class Main {
     public static void main(String[] args) {
         BMW bmwX5 = new BMW ("X5","CE0700CX",150.0);
-        Driver driverBMW = new Driver("Anton", "S class", 100, bmwX5 );
+        Driver driverBMW = new Driver("Anton", 100, bmwX5 );
         Client client = new Client("Kolya", "380959223789");
         Trip trip = new Trip("Che", "Migovo", 100.0);
-        trip.setClient(client);
+        client.setTrip(trip);
         trip.setDriver(driverBMW);
 
         System.out.println(trip);
+        System.out.println(client);
 
     }
 
 }
+

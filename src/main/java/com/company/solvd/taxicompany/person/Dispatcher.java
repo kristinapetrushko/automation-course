@@ -3,8 +3,8 @@ package com.company.solvd.taxicompany.person;
 public class Dispatcher extends Employee implements IDispatcher {
 
 
-    public Dispatcher(String name, String position, double salary) {
-        super(name, position, salary);
+    public Dispatcher(String name, double salary) {
+        super(name, salary);
     }
 
     @Override
@@ -14,3 +14,4 @@ public class Dispatcher extends Employee implements IDispatcher {
 
 
 }
+
