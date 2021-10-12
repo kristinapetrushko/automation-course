@@ -6,8 +6,9 @@ public class MERCEDESSPRINTER extends Hruzovi {
 
     private String number;
 
-    public MERCEDESSPRINTER(String model, double RATE_PER_KM) {
+    public MERCEDESSPRINTER(String model, String number, double RATE_PER_KM) {
         super(model, RATE_PER_KM);
+        this.number = number;
     }
 
 

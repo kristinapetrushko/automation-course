@@ -1,16 +1,23 @@
-package com.company.solvd.taxicompany.person;
+package com.company.solvd.taxicompany.person.client;
 
+import com.company.solvd.taxicompany.person.utils.IClient;
+import com.company.solvd.taxicompany.person.Person;
 import com.company.solvd.taxicompany.transport.Trip;
 
-public class Client extends Person implements IClient{
+public class Client extends Person implements IClient {
 
     private final String name;
     private String numberContact;
     private Trip trip;
 
-    public Client(String name, String numberContact) {
+    public Client(String name, String numberContact) throws IllegalArgumentException {
         super(name, numberContact);
-        this.name = name;
+        if(name == null || name.isBlank() || name.isEmpty()) {
+            throw new IllegalArgumentException("The name should not be empty");
+        }
+        else {
+            this.name = name;
+        }
         this.numberContact = numberContact;
     }
 

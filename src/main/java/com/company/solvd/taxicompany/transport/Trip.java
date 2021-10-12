@@ -1,7 +1,6 @@
 package com.company.solvd.taxicompany.transport;
 
-import com.company.solvd.taxicompany.person.Client;
-import com.company.solvd.taxicompany.person.Driver;
+import com.company.solvd.taxicompany.person.employee.Driver;
 
 public class Trip {
 
