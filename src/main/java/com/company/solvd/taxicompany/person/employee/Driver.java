@@ -4,6 +4,7 @@ import com.company.solvd.taxicompany.person.utils.IDriver;
 import com.company.solvd.taxicompany.person.utils.exception.SalaryZeroException;
 import com.company.solvd.taxicompany.transport.BMW;
 import com.company.solvd.taxicompany.transport.Transport;
+import org.apache.commons.lang3.RandomUtils;
 
 import java.util.Random;
 
@@ -22,7 +23,7 @@ public class Driver extends Employee implements IDriver {
             this.salary = salary;
         }
         this.transport = transport;
-        Random rd = new Random();
+        RandomUtils rd = new RandomUtils();
         this.isAvailible = rd.nextBoolean();
     }
 
