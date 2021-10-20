@@ -1,4 +1,4 @@
-package com.company.solvd.taxicompany.person.utils.exception;
+package com.company.solvd.taxicompany.exception;
 
 public class SalaryZeroException extends Exception {
     public SalaryZeroException(String s) {

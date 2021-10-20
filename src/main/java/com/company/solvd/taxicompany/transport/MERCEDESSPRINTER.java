@@ -2,15 +2,19 @@ package com.company.solvd.taxicompany.transport;
 
 import java.util.Objects;
 
-public class MERCEDESSPRINTER extends Hruzovi {
+public class MERCEDESSPRINTER extends Transport {
 
+    private final String TYPE = "econom";
     private String number;
 
-    public MERCEDESSPRINTER(String model, String number, double RATE_PER_KM) {
-        super(model, RATE_PER_KM);
+    public MERCEDESSPRINTER(String model, String number, double rate) {
+        super(model, rate);
         this.number = number;
     }
 
+    public String getTYPE() {
+        return TYPE;
+    }
 
     public String getNumber() {
         return number;
@@ -36,6 +40,7 @@ public class MERCEDESSPRINTER extends Hruzovi {
     @Override
     public String toString() {
         return "MERCEDESSPRINTER{" +
+                "TYPE='" + TYPE + '\'' +
                 "number='" + number + '\'' +
                 '}';
     }

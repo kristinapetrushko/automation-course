@@ -1,21 +1,20 @@
-package com.company.solvd.taxicompany.transport;
+package com.company.solvd.taxicompany.trip;
 
+import com.company.solvd.taxicompany.person.employee.Dispatcher;
 import com.company.solvd.taxicompany.person.employee.Driver;
 
 public class Trip {
 
     private String starting;
     private String destination;
-    private double  distanceInKm;
+    private double distanceInKm;
     private Driver driver;
-
 
 
     public Trip(String starting, String destination, double distanceInKm) {
         this.starting = starting;
         this.destination = destination;
         this.distanceInKm = distanceInKm;
-
     }
 
     public Driver getDriver() {
@@ -25,7 +24,6 @@ public class Trip {
     public void setDriver(Driver driver) {
         this.driver = driver;
     }
-
 
     public String getStarting() {
         return starting;
@@ -50,8 +48,6 @@ public class Trip {
     public void setDistanceInKm(double distanceInKm) {
         this.distanceInKm = distanceInKm;
     }
-
-
 
     public double getCalculatedPrice() {
         double ratePerKm = driver.getTransport().getRATE_PER_KM();

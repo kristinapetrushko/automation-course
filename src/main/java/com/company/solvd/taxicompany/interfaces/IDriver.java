@@ -1,4 +1,4 @@
-package com.company.solvd.taxicompany.person.utils;
+package com.company.solvd.taxicompany.interfaces;
 
 public interface IDriver {
     void talkToTheClient ();

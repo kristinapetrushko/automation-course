@@ -2,34 +2,33 @@ package com.company.solvd.taxicompany.transport;
 
 import java.util.Objects;
 
-public class BMW extends Lehkovi {
+public class BMW extends Transport{
     private final String TYPE = "comfort";
     private String number;
 
     public BMW(String model, String number, double rate) {
         super(model, rate);
         this.number = number;
-
     }
 
-    public String getTYPE() {
-        return TYPE;
-    }
+     public String getTYPE() {
+         return TYPE;
+     }
 
-    public String getNumber() {
-        return number;
-    }
+     public String getNumber() {
+         return number;
+     }
 
-    public void setNumber(String number) {
-        this.number = number;
-    }
+     public void setNumber(String number) {
+         this.number = number;
+     }
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         BMW bmw = (BMW) o;
-        return number == bmw.number && Objects.equals(TYPE, bmw.TYPE);
+        return Objects.equals(TYPE, bmw.TYPE) && Objects.equals(number, bmw.number);
     }
 
     @Override
@@ -41,8 +40,8 @@ public class BMW extends Lehkovi {
     public String toString() {
         return "BMW{" +
                 "TYPE='" + TYPE + '\'' +
-                ", number=" + number +
+                ", number='" + number + '\'' +
                 '}';
     }
-}
 
+}

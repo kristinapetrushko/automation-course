@@ -1,30 +1,19 @@
 package com.company.solvd.taxicompany.person.employee;
 
-import com.company.solvd.taxicompany.person.utils.IDriver;
-import com.company.solvd.taxicompany.person.utils.exception.SalaryZeroException;
-import com.company.solvd.taxicompany.transport.BMW;
+import com.company.solvd.taxicompany.interfaces.IDriver;
+import com.company.solvd.taxicompany.exception.SalaryZeroException;
 import com.company.solvd.taxicompany.transport.Transport;
 import org.apache.commons.lang3.RandomUtils;
 
-import java.util.Random;
-
 public class Driver extends Employee implements IDriver {
 
-    private double salary;
     private Transport transport;
     private boolean isAvailible;
 
     public Driver(String name, double salary, Transport transport) throws SalaryZeroException {
         super(name, salary);
-        if(salary<=0.0) {
-            throw new SalaryZeroException("Salary should be greater than zero");
-        }
-        else {
-            this.salary = salary;
-        }
         this.transport = transport;
-        RandomUtils rd = new RandomUtils();
-        this.isAvailible = rd.nextBoolean();
+        this.isAvailible = RandomUtils.nextBoolean();
     }
 
     public Transport getTransport() {
@@ -45,6 +34,7 @@ public class Driver extends Employee implements IDriver {
 
     @Override
     public void talkToTheClient() {
+        System.out.println("Let`s go?");
 
     }
 

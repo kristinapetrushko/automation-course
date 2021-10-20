@@ -1,26 +1,33 @@
 package com.company.solvd.taxicompany.person.client;
 
-import com.company.solvd.taxicompany.person.utils.IClient;
+import com.company.solvd.taxicompany.interfaces.IClient;
 import com.company.solvd.taxicompany.person.Person;
-import com.company.solvd.taxicompany.transport.Trip;
+import com.company.solvd.taxicompany.person.employee.Dispatcher;
+import com.company.solvd.taxicompany.trip.Trip;
 
 public class Client extends Person implements IClient {
 
-    private final String name;
     private String numberContact;
-    private Trip trip;
+    private Dispatcher dispatcher;
+    private String starting;
+    private String destination;
+    private double distanceInKm;
 
-    public Client(String name, String numberContact) throws IllegalArgumentException {
-        super(name, numberContact);
-        if(name == null || name.isBlank() || name.isEmpty()) {
-            throw new IllegalArgumentException("The name should not be empty");
-        }
-        else {
-            this.name = name;
-        }
+    public Client(String name, String numberContact, String starting, String destination, double distanceInKm) {
+        super(name);
         this.numberContact = numberContact;
+        this.starting = starting;
+        this.destination = destination;
+        this.distanceInKm = distanceInKm;
     }
 
+    public Dispatcher getDispatcher() {
+        return dispatcher;
+    }
+
+    public void setDispatcher(Dispatcher dispatcher) {
+        this.dispatcher = dispatcher;
+    }
 
     public String getNumberContact() {
         return numberContact;
@@ -30,13 +37,32 @@ public class Client extends Person implements IClient {
         this.numberContact = numberContact;
     }
 
-    @Override
-    public String getName() {
-        return name;
+    public String getStarting() {
+        return starting;
     }
 
-    public Trip getTrip() {
-        return trip;
+    public void setStarting(String starting) {
+        this.starting = starting;
+    }
+
+    public String getDestination() {
+        return destination;
+    }
+
+    public void setDestination(String destination) {
+        this.destination = destination;
+    }
+
+    public double getDistanceInKm() {
+        return distanceInKm;
+    }
+
+    public void setDistanceInKm(double distanceInKm) {
+        this.distanceInKm = distanceInKm;
+    }
+
+    public void enterNumberContact() {
+
     }
 
     @Override
@@ -44,18 +70,10 @@ public class Client extends Person implements IClient {
         return "Client{" +
                 "name=" + getName() + '\'' +
                 "numberContact=" + numberContact + '\'' +
-                "trip=" + trip + '\'' +
+                ", starting='" + starting + '\'' +
+                ", destination='" + destination + '\'' +
+                ", distanceInKm=" + distanceInKm +
                 '}';
-    }
-
-    @Override
-    public void numberContact() {
-
-    }
-
-    public void setTrip(Trip trip) {
-        this.trip = trip;
-
     }
 
 

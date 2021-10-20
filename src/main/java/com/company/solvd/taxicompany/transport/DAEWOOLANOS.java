@@ -2,7 +2,7 @@ package com.company.solvd.taxicompany.transport;
 
 import java.util.Objects;
 
-public class DAEWOOLANOS extends Lehkovi {
+public class DAEWOOLANOS extends Transport {
 
     private final String TYPE = "econom";
     private String number;

@@ -8,14 +8,15 @@ public abstract class Transport {
     public Transport(String model, double RATE_PER_KM) {
         this.model = model;
         this.RATE_PER_KM = RATE_PER_KM;
-    }
 
-    public void setModel(String model) {
-        this.model = model;
     }
 
     public String getModel() {
         return model;
+    }
+
+    public void setModel(String model) {
+        this.model = model;
     }
 
     public double getRATE_PER_KM() {
@@ -25,4 +26,13 @@ public abstract class Transport {
     public void setRATE_PER_KM(double RATE_PER_KM) {
         this.RATE_PER_KM = RATE_PER_KM;
     }
+
+    @Override
+    public String toString() {
+        return "Transport{" +
+                "model='" + model + '\'' +
+                ", RATE_PER_KM=" + RATE_PER_KM +
+                '}';
+    }
 }
+
