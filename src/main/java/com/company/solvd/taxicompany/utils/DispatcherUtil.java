@@ -2,7 +2,6 @@ package com.company.solvd.taxicompany.utils;
 
 import com.company.solvd.taxicompany.exception.SalaryZeroException;
 import com.company.solvd.taxicompany.person.employee.Dispatcher;
-
 import java.util.ArrayList;
 
 public class DispatcherUtil {

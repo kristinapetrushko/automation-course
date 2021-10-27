@@ -1,15 +1,37 @@
 package com.company.solvd.taxicompany.transport;
 
+import com.company.solvd.taxicompany.person.employee.Driver;
+
 import java.util.Objects;
 
 public class VOLVO extends Transport {
 
     private final String TYPE = "econom";
     private String number;
+    private String model;
+    private Driver driver;
 
-    public VOLVO(String model, String number, double rate) {
-        super(model, rate);
+    public VOLVO(String model, String number, double rate, Driver driver) {
+        super(model, rate, driver);
         this.number = number;
+        this.model = model;
+        this.driver = driver;
+    }
+
+    public Driver getDriver() {
+        return driver;
+    }
+
+    public void setDriver(Driver driver) {
+        this.driver = driver;
+    }
+
+    public String getModel() {
+        return model;
+    }
+
+    public void setModel(String model) {
+        this.model = model;
     }
 
     public String getTYPE() {
@@ -42,6 +64,7 @@ public class VOLVO extends Transport {
         return "VOLVO{" +
                 "TYPE='" + TYPE + '\'' +
                 ", number='" + number + '\'' +
+                ", driver=" + driver +
                 '}';
     }
 }

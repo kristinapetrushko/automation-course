@@ -1,19 +1,28 @@
 package com.company.solvd.taxicompany.person.employee;
-
 import com.company.solvd.taxicompany.interfaces.IDispatcher;
 import com.company.solvd.taxicompany.exception.SalaryZeroException;
 import com.company.solvd.taxicompany.person.client.Client;
 import com.company.solvd.taxicompany.transport.Transport;
-import com.company.solvd.taxicompany.trip.Trip;
+import org.apache.log4j.Logger;
+
 
 public class Dispatcher extends Employee implements IDispatcher {
-    private Driver driver;
-    private Client client;
+    public static final Logger LOGGER = Logger.getLogger(Dispatcher.class);
 
+    private Transport transport;
+    private Client client;
+    private Driver driver;
 
     public Dispatcher(String name, double salary) throws SalaryZeroException {
         super(name, salary);
+    }
 
+    public Driver getDriver() {
+        return driver;
+    }
+
+    public void setDriver(Driver driver) {
+        this.driver = driver;
     }
 
     public Client getClient() {
@@ -24,24 +33,23 @@ public class Dispatcher extends Employee implements IDispatcher {
         this.client = client;
     }
 
-
-    public Driver getDriver() {
-        return driver;
+    public Transport getTransport() {
+        return transport;
     }
 
-    public void setDriver(Driver driver) {
-        this.driver = driver;
+    public void setTransport(Transport transport) {
+        this.transport = transport;
     }
 
-    public double getCalculatedPrice() {
-        double ratePerKm = driver.getTransport().getRATE_PER_KM();
-        double result = (client.getDistanceInKm() * ratePerKm);
-        return result;
-    }
+ //   public double getCalculatedPrice() {
+ //       double ratePerKm = transport.getDriver().getRATE_PER_KM();
+ //       double result = (client.getDistanceInKm() * ratePerKm);
+ //       return result;
+ //   }
 
     @Override
     public void makeClientOrder() {
-        System.out.println("Where to submit the car?");
+        LOGGER.info("Where to submit the car?");
     }
 
     @Override
@@ -49,8 +57,8 @@ public class Dispatcher extends Employee implements IDispatcher {
         return "Dispatcher{" +
                 "name=" + getName() + '\'' +
                 "client=" + client +
-                "driver=" + driver +
-                ", result price=" + getCalculatedPrice() +
+                "transport=" + transport +
+ //               ", result price=" + getCalculatedPrice() +
                 '}';
     }
 }

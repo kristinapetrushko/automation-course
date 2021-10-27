@@ -10,21 +10,16 @@ public class DriverUtil {
 
     public static ArrayList<Driver> createDriverList() throws SalaryZeroException {
         ArrayList<Driver> drivers = new ArrayList<>();
-        Transport bmwX5 = null;
-        Transport camry = null;
-        Transport daewoolanos = null;
-        Transport mercedessprinter = null;
-        Transport volvo = null;
-        Driver driverBMW = new Driver("Maks", 20000.0,bmwX5);
-        Driver driverTOYOTA = new Driver("Oktavian", 25000.0,camry);
-        Driver driverDAEWOOLANOS = new Driver("Katya", 27000.0, daewoolanos);
-        Driver driverMERCEDESSPRINTER = new Driver("Andriy", 20000.0, mercedessprinter);
-        Driver driverVOLVO = new Driver("Oleksandr", 24000.0, volvo);
-        drivers.add(driverBMW);
-        drivers.add(driverTOYOTA);
-        drivers.add(driverDAEWOOLANOS);
-        drivers.add(driverMERCEDESSPRINTER);
-        drivers.add(driverVOLVO);
+        Driver driver = new Driver("Maks", 20000.0);
+        Driver driver1 = new Driver("Oktavian", 25000.0);
+        Driver driver2 = new Driver("Katya", 27000.0);
+        Driver driver3 = new Driver("Andriy", 20000.0);
+        Driver driver4 = new Driver("Oleksandr", 24000.0);
+        drivers.add(driver);
+        drivers.add(driver1);
+        drivers.add(driver2);
+        drivers.add(driver3);
+        drivers.add(driver4);
         return drivers;
     }
 }

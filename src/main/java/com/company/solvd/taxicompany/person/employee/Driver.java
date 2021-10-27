@@ -1,27 +1,20 @@
 package com.company.solvd.taxicompany.person.employee;
-
 import com.company.solvd.taxicompany.interfaces.IDriver;
 import com.company.solvd.taxicompany.exception.SalaryZeroException;
 import com.company.solvd.taxicompany.transport.Transport;
 import org.apache.commons.lang3.RandomUtils;
+import org.apache.log4j.Logger;
+
 
 public class Driver extends Employee implements IDriver {
 
-    private Transport transport;
+    public static final Logger LOGGER = Logger.getLogger(Driver.class);
+
     private boolean isAvailible;
 
-    public Driver(String name, double salary, Transport transport) throws SalaryZeroException {
+    public Driver(String name, double salary) throws SalaryZeroException {
         super(name, salary);
-        this.transport = transport;
         this.isAvailible = RandomUtils.nextBoolean();
-    }
-
-    public Transport getTransport() {
-        return transport;
-    }
-
-    public void setTransport(Transport transport) {
-        this.transport = transport;
     }
 
     public boolean isAvailible() {
@@ -34,15 +27,13 @@ public class Driver extends Employee implements IDriver {
 
     @Override
     public void talkToTheClient() {
-        System.out.println("Let`s go?");
-
+        LOGGER.info("Let`s go?");
     }
 
     @Override
     public String toString() {
         return "Driver{" +
                 "name=" + getName() + '\'' +
-                "transport=" + transport + '\'' +
                 ", isAvailible=" + isAvailible + '\'' +
                 '}';
     }

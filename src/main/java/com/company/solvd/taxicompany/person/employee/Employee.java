@@ -1,7 +1,4 @@
-
-
 package com.company.solvd.taxicompany.person.employee;
-
 import com.company.solvd.taxicompany.person.Person;
 import com.company.solvd.taxicompany.exception.SalaryZeroException;
 

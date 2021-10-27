@@ -1,9 +1,8 @@
 package com.company.solvd.taxicompany.person.client;
-
 import com.company.solvd.taxicompany.interfaces.IClient;
 import com.company.solvd.taxicompany.person.Person;
 import com.company.solvd.taxicompany.person.employee.Dispatcher;
-import com.company.solvd.taxicompany.trip.Trip;
+
 
 public class Client extends Person implements IClient {
 
@@ -62,7 +61,6 @@ public class Client extends Person implements IClient {
     }
 
     public void enterNumberContact() {
-
     }
 
     @Override
@@ -75,6 +73,5 @@ public class Client extends Person implements IClient {
                 ", distanceInKm=" + distanceInKm +
                 '}';
     }
-
 
 }
