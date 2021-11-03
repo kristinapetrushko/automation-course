@@ -11,18 +11,12 @@ public class Dispatcher extends Employee implements IDispatcher {
 
     private Transport transport;
     private Client client;
-    private Driver driver;
 
-    public Dispatcher(String name, double salary) throws SalaryZeroException {
+    public Dispatcher(String name, double salary, Transport transport, Client client)
+            throws SalaryZeroException {
         super(name, salary);
-    }
-
-    public Driver getDriver() {
-        return driver;
-    }
-
-    public void setDriver(Driver driver) {
-        this.driver = driver;
+        this.transport = transport;
+        this.client = client;
     }
 
     public Client getClient() {
@@ -41,11 +35,11 @@ public class Dispatcher extends Employee implements IDispatcher {
         this.transport = transport;
     }
 
- //   public double getCalculatedPrice() {
- //       double ratePerKm = transport.getDriver().getRATE_PER_KM();
- //       double result = (client.getDistanceInKm() * ratePerKm);
- //       return result;
- //   }
+    public double getCalculatedPrice() {
+        double ratePerKm = transport.getRATE_PER_KM();
+        double result = (client.getDistanceInKm() * ratePerKm);
+        return result;
+    }
 
     @Override
     public void makeClientOrder() {
@@ -58,7 +52,7 @@ public class Dispatcher extends Employee implements IDispatcher {
                 "name=" + getName() + '\'' +
                 "client=" + client +
                 "transport=" + transport +
- //               ", result price=" + getCalculatedPrice() +
+                ", result price=" + getCalculatedPrice() +
                 '}';
     }
 }

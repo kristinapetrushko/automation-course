@@ -8,30 +8,10 @@ public class VOLVO extends Transport {
 
     private final String TYPE = "econom";
     private String number;
-    private String model;
-    private Driver driver;
 
     public VOLVO(String model, String number, double rate, Driver driver) {
         super(model, rate, driver);
         this.number = number;
-        this.model = model;
-        this.driver = driver;
-    }
-
-    public Driver getDriver() {
-        return driver;
-    }
-
-    public void setDriver(Driver driver) {
-        this.driver = driver;
-    }
-
-    public String getModel() {
-        return model;
-    }
-
-    public void setModel(String model) {
-        this.model = model;
     }
 
     public String getTYPE() {
@@ -62,9 +42,10 @@ public class VOLVO extends Transport {
     @Override
     public String toString() {
         return "VOLVO{" +
+                "model='" + getModel() + '\'' +
                 "TYPE='" + TYPE + '\'' +
                 ", number='" + number + '\'' +
-                ", driver=" + driver +
+                ", driver=" + getDriver() +
                 '}';
     }
 }

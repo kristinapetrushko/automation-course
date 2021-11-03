@@ -8,30 +8,10 @@ public class MERCEDESSPRINTER extends Transport {
 
     private final String TYPE = "econom";
     private String number;
-    private String model;
-    private Driver driver;
 
     public MERCEDESSPRINTER(String model, String number, double rate, Driver driver) {
         super(model, rate, driver);
         this.number = number;
-        this.model = model;
-        this.driver = driver;
-    }
-
-    public Driver getDriver() {
-        return driver;
-    }
-
-    public void setDriver(Driver driver) {
-        this.driver = driver;
-    }
-
-    public String getModel() {
-        return model;
-    }
-
-    public void setModel(String model) {
-        this.model = model;
     }
 
     public String getTYPE() {
@@ -62,10 +42,10 @@ public class MERCEDESSPRINTER extends Transport {
     @Override
     public String toString() {
         return "MERCEDESSPRINTER{" +
-                "model='" + model + '\'' +
+                "model='" + getModel() + '\'' +
                 "TYPE='" + TYPE + '\'' +
                 "number='" + number + '\'' +
-                ", driver=" + driver +
+                ", driver=" + getDriver() +
                 '}';
     }
 }

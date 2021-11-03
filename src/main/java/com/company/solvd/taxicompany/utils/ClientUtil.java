@@ -1,8 +1,12 @@
 package com.company.solvd.taxicompany.utils;
+
 import com.company.solvd.taxicompany.person.client.Client;
 
 import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.List;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class ClientUtil {
 
@@ -18,4 +22,9 @@ public class ClientUtil {
 
     }
 
+
+    public static ArrayList<Client> sortClientByName() {
+        return (ArrayList<Client>) sortClientByName().stream().sorted(Comparator.comparing(Client::getName))
+                .collect(Collectors.toList());
+    }
 }
