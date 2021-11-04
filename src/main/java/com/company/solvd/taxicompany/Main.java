@@ -9,7 +9,9 @@ import org.apache.log4j.Logger;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import java.util.Scanner;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 
@@ -19,11 +21,19 @@ public class Main {
 
     public static void main(String[] args) throws SalaryZeroException {
 
+        List<Integer> numbers = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+        List<Integer> newNumbers = numbers.stream().filter(e -> e > 3).collect(Collectors.toList());
+        LOGGER.info(numbers);
+        LOGGER.info(newNumbers);
+
+
 
         LOGGER.info(Arrays.toString(TaxiPark.values()));
 
         IPrinter printerInfo = (s -> LOGGER.info(s));
         printerInfo.print("BMW");
+
+        LOGGER.info(ClientUtil.sortClientByName(ClientUtil.createClientsList()));
 
 
         BMW X5 = (BMW) TransportUtil.createTransportMap().get("X5");

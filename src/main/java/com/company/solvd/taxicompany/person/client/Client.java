@@ -66,12 +66,12 @@ public class Client extends Person implements IClient {
     @Override
     public String toString() {
         return "Client{" +
-                "name=" + getName() + '\'' +
-                "numberContact=" + numberContact + '\'' +
-                ", starting='" + starting + '\'' +
-                ", destination='" + destination + '\'' +
+                "name=" + getName() +
+                ", numberContact=" + numberContact +
+                ", starting='" + starting + "'" +
+                ", destination='" + destination + "'" +
                 ", distanceInKm=" + distanceInKm +
-                '}';
+                "}";
     }
 
 }
