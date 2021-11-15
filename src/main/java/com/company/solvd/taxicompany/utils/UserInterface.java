@@ -14,7 +14,7 @@ import java.util.Scanner;
 public class UserInterface {
     private static final Logger LOGGER = LogManager.getLogger(UserInterface.class);
 
-    public static void main(String[] args) throws SalaryZeroException {
+    public static void letsGo() throws SalaryZeroException {
         Scanner scanner = new Scanner(System.in);
 
         LOGGER.info("Welcome to our best Taxi Company!");
@@ -38,21 +38,24 @@ public class UserInterface {
         LOGGER.info("Your car - ");
         LOGGER.info(myCar);
 
-//        if (myCar == TransportUtil.createTransportMap().get(X5) {
-//            yourPrice = distanceInKm * 100;
-//        }
-//         )
-
 
         LOGGER.info("Please, enter where to submit a car - ");
         String starting = scanner.nextLine();
         LOGGER.info("Where will you go?");
         String destination = scanner.nextLine();
         LOGGER.info("Please, enter distance in Km");
-//        Double distanceInKm = scanner.nextLine();
+        distanceInKm = Double.parseDouble(scanner.nextLine());
+        Client client = ClientUtil.createClientsList().get(0);
+        client.setDistanceInKm(distanceInKm);
+        Dispatcher dispatcher = DispatcherUtil.createDispatcherList().get(0);
+        yourPrice = dispatcher.getCalculatedPrice();
 
-
-        LOGGER.info("Your trip price - ");
+        LOGGER.info("From - ");
+        LOGGER.info(starting);
+        LOGGER.info("To - ");
+        LOGGER.info(destination);
+        LOGGER.info("Your trip price - " + yourPrice);
+        LOGGER.info("Have a nice trip!");
 
 
         scanner.close();
